@@ -216,14 +216,15 @@ String jugadores4[] = {
 		
 	}
 
-	public static void administrador(String capi,String jugadores1[],String jugadores2[] ,String jugadores3[],String jugadores4[]) {
-		while (opcion!=5) {
+	public static void administrador(String capi,String jugadores1[],String jugadores2[] ,String jugadores3[],String jugadores4[],String jugadores5[],String jugadores6[]) {
+		while (opcion!=7) {
 			System.out.println("seleccione un equipo");
 			System.out.println("1. Real madrid");
 	           System.out.println("2. Barcelona");
 	           System.out.println("3. atletico");
 	           System.out.println("4. bayern");
-	           System.out.println("5. Salir ");   
+	           System.out.println("5. milan "); 
+	           System.out.println("6. city "); 
 	           opcion = leer.nextInt();
 	           switch (opcion) {
 	           case 1:
@@ -238,7 +239,12 @@ String jugadores4[] = {
 	           case 4:
 	        	   equipo4(jugadores4, capi);
 	        	   break;	            	   
-	           
+	           case 5:
+	        	   equipo5(jugadores5, capi)
+	        	   break;
+	           case 6:
+	        	   equipo6(jugadores6,capi)
+	        	   break;
 	           }
 		
 			}
@@ -288,6 +294,8 @@ String jugadores4[] = {
 			}
 			
 			public static void cambiar(String jugadores1[]) {
+				for(int i=0;i<jugadores1.length;i++)
+		        {
 				System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
 				int opcion1 = leer.nextInt();				
 				System.out.println("que jugador quiere en esa pocscion");				
@@ -385,6 +393,8 @@ String jugadores4[] = {
 		}
 					
 		public static void cambiar2(String jugadores2[]) {
+			for(int i=0;i<jugadores1.length;i++)
+	        {
 			System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
 			int opcion1 = leer.nextInt();				
 			System.out.println("que jugador quiere en esa pocscion");				
@@ -427,7 +437,8 @@ String jugadores4[] = {
 		}	
 		public static void elegircapi2(String jugadores2[], String capi) {
 			System.out.println("Ingrese el capitan para el equipo");
-			capi = leer.next();
+			opcion = leer.next();
+			capi = jugadores2[opcion];
 		}
 
 		
@@ -476,6 +487,8 @@ String jugadores4[] = {
 		}
 					
 		public static void cambiar3(String jugadores3[]) {
+			for(int i=0;i<jugadores1.length;i++)
+	        {
 			System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
 			int opcion1 = leer.nextInt();				
 			System.out.println("que jugador quiere en esa pocscion");				
@@ -518,7 +531,8 @@ String jugadores4[] = {
 		}
 		public static void elegircapi3(String jugadores3[], String capi) {
 			System.out.println("Ingrese el capitan para el equipo");
-			capi = leer.next();
+			opcion = leer.next();
+			capi = jugadores3[opcion];
 		}
 
 		
@@ -566,9 +580,10 @@ String jugadores4[] = {
 	        }
 			System.out.println("el capitan es " + capi);
 		}
-		
-		
+						
 		public static void cambiar4(String jugadores4[]) {
+			for(int i=0;i<jugadores1.length;i++)
+	        {
 			System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
 			int opcion1 = leer.nextInt();				
 			System.out.println("que jugador quiere en esa pocscion");				
@@ -610,8 +625,205 @@ String jugadores4[] = {
 		}	
 		public static void elegircapi4(String jugadores4[],String capi) {
 			System.out.println("Ingrese el capitan para el equipo");
-			capi = leer.next();
+			opcion = leer.next();
+			capi = jugadores4[opcion];
 		}
+public static void equipo5(String jugadores5[], String capi) {
+			
+			while (opcion!=6) {
+				System.out.println("seleccione una opcion");
+				System.out.println("1. ver jugadores");
+		           System.out.println("2. cambiar de poscion");
+		           System.out.println("3. ingresar nuevo jugador");
+		           System.out.println("4. sustituir");
+		           System.out.println("5. elegir capitan ");
+		           System.out.println("6. Salir ");   
+		           opcion = leer.nextInt();
+		           switch (opcion) {
+		           case 1:
+		        	   verposciones(jugadores5,capi);
+		        	   break;
+		           case 2: 
+		        	   cambiar(jugadores5);
+		        	   break;
+		           case 3:
+		        	   ingresar(jugadores5);
+		        	   break;
+		           case 4:
+		        	   sustituir(jugadores5);
+		        	   break;
+		           case 5:
+		        	   elegircapi(jugadores5, capi);
+		        	   break;		              	   
+		           
+		           }
+			
+				}
+				
+				
+			}
+
+			public static void verposciones(String jugadores5[],String capi) {
+				System.out.println("Milan :");
+				for(int i=0;i<jugadores5.length;i++)
+		        {
+		            System.out.println(jugadores5[i]);
+		        }
+				System.out.println("el capitan es " + capi);
+			}
+			
+			public static void cambiar(String jugadores5[]) {
+				for(int i=0;i<jugadores5.length;i++)
+		        {
+				System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+				int opcion1 = leer.nextInt();				
+				System.out.println("que jugador quiere en esa pocscion");				
+				opcion = leer.nextInt();
+				Collections.swap(Arrays.asList(jugadores5), opcion1, opcion);
+		        System.out.println(Arrays.toString(jugadores5));
+				
+				for(int k=0;k<jugadores5.length;k++)
+		        {
+		            System.out.println(jugadores5[k]);
+		        }
+				 
+		}	 
+			public static void ingresar(String jugadores5[]) {
+				System.out.println("Desea añadir un jugador mas al equipo");
+				String sd = leer.nextLine();
+				if (jugadores5.length>17) {
+					System.out.println("Ya esta el maximo de jugadores en el equipo");
+				} else {
+					System.out.println("Coloque el dorsal y nombre de su jugador");
+					String sed = leer.nextLine();
+					jugadores5[16]= sed;
+				}
+			}
+				 
+			
+			public static void sustituir(String jugadores5[]) {
+				for(int i=0;i<3;i++) {				
+					System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+					int opcion1 = leer.nextInt();				
+					System.out.println("que jugador quiere en esa pocscion");				
+					opcion = leer.nextInt();
+					Collections.swap(Arrays.asList(jugadores5), opcion1, opcion);
+			        System.out.println(Arrays.toString(jugadores5));
+					
+					for(int k=0;k<jugadores5.length;k++)
+			        {
+			            System.out.println(jugadores5[k]);
+			        }
+					 
+					}
+			}	
+				 
+				
+			public static void elegircapi(String jugadores5[], String capi) {
+				
+				System.out.println("Ingrese el dorsal del capitan para el equipo");
+				opcion = leer.nextInt();
+				capi = jugadores5[opcion];
+			}
+			public static void equipo5(String jugadores6[], String capi) {
+				
+				while (opcion!=6) {
+					System.out.println("seleccione una opcion");
+					System.out.println("1. ver jugadores");
+			           System.out.println("2. cambiar de poscion");
+			           System.out.println("3. ingresar nuevo jugador");
+			           System.out.println("4. sustituir");
+			           System.out.println("5. elegir capitan ");
+			           System.out.println("6. Salir ");   
+			           opcion = leer.nextInt();
+			           switch (opcion) {
+			           case 1:
+			        	   verposciones(jugadores6,capi);
+			        	   break;
+			           case 2: 
+			        	   cambiar(jugadores6);
+			        	   break;
+			           case 3:
+			        	   ingresar(jugadores6);
+			        	   break;
+			           case 4:
+			        	   sustituir(jugadores6);
+			        	   break;
+			           case 5:
+			        	   elegircapi(jugadores6, capi);
+			        	   break;		              	   
+			           
+			           }
+				
+					}
+					
+					
+				}
+
+				public static void verposciones(String jugadores6[],String capi) {
+					System.out.println("Milan :");
+					for(int i=0;i<jugadores6.length;i++)
+			        {
+			            System.out.println(jugadores6[i]);
+			        }
+					System.out.println("el capitan es " + capi);
+				}
+				
+				public static void cambiar(String jugadores6[]) {
+					for(int i=0;i<jugadores6.length;i++)
+			        {
+					System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+					int opcion1 = leer.nextInt();				
+					System.out.println("que jugador quiere en esa pocscion");				
+					opcion = leer.nextInt();
+					Collections.swap(Arrays.asList(jugadores6), opcion1, opcion);
+			        System.out.println(Arrays.toString(jugadores6));
+					
+					for(int k=0;k<jugadores6.length;k++)
+			        {
+			            System.out.println(jugadores6[k]);
+			        }
+					 
+			}	 
+				public static void ingresar(String jugadores6[]) {
+					System.out.println("Desea añadir un jugador mas al equipo");
+					String sd = leer.nextLine();
+					if (jugadores6.length>17) {
+						System.out.println("Ya esta el maximo de jugadores en el equipo");
+					} else {
+						System.out.println("Coloque el dorsal y nombre de su jugador");
+						String sed = leer.nextLine();
+						jugadores6[16]= sed;
+					}
+				}
+					 
+				
+				public static void sustituir(String jugadores6[]) {
+					for(int i=0;i<3;i++) {				
+						System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+						int opcion1 = leer.nextInt();				
+						System.out.println("que jugador quiere en esa pocscion");				
+						opcion = leer.nextInt();
+						Collections.swap(Arrays.asList(jugadores6), opcion1, opcion);
+				        System.out.println(Arrays.toString(jugadores6));
+						
+						for(int k=0;k<jugadores6.length;k++)
+				        {
+				            System.out.println(jugadores6[k]);
+				        }
+						 
+						}
+				}	
+					 
+					
+				public static void elegircapi(String jugadores6[], String capi) {
+					
+					System.out.println("Ingrese el dorsal del capitan para el equipo");
+					opcion = leer.nextInt();
+					capi = jugadores6 [opcion];
+				}
+						
+					
 
 		
 		
@@ -1355,4 +1567,5 @@ public static void Partidos(){
 }
 
 	}	 
+
 
