@@ -1,0 +1,1339 @@
+	public static final Scanner leer = new Scanner(System.in);	
+	public static int opcion = 0;
+	public static String capi;
+	public static void main(String[] args)
+	{
+		String[] jugadores1 = {
+		    
+		   "0.Courtois",
+		    "1.Alaba",
+		   "2.Ramos",
+		   "3.Carvajal",
+		   "4.Marcelo",
+		    "5.Modric",
+		   "6.Kroos",
+		   "7. James",
+		    "8.Cr7",
+		    "9.Benzema",
+		    "10.Bale",
+		    "11.Valverde",
+		   "12.Vincius",
+		    "13.rodrigo",
+		   "14.Mcalister",
+		    "15.zidane",
+		   "16.neso",
+		};
+String jugadores2[] = { 
+        
+       "0.Ter Stegen",
+       "1.Pique",
+       "2.Puyol",
+       "3.Dani Alvez",
+        "4.davies",
+       "5.rakitic",
+       "6.xavi",
+       "7.iniesta",
+       "8.suarez",
+       "9.neymar",
+     "10.messi",
+       "11.rafinha",
+       "12.pedri",
+        "13.gavi",
+      "14.buyer",
+        "15.sanchez",
+        "16.marques"
+};
+String jugadores3[] = { 
+        
+        "0.Oblak",
+       "1.Kondogbia",
+        "2.gimenez",
+        "3.unha",
+       "4.reguillon",
+      "5.felipe luis",
+      "6.carrasco",
+       "7.Joao",
+      "8.griezman",
+       "9.Lemar",
+       "10.Morata",
+     "11.Saul",
+       "12.Koke",
+      "13.grbic",
+       "14.reinildo",
+       "15.correa",
+      "16.llorente",
+               
+};
+   
+String jugadores4[] = {
+        
+    "0.Never",
+     "1.Hummels",
+       "2.Boateng",
+       "3.Kimmich",
+        "4.lahm",
+        "5.kimmich",
+        "6.Vidal",
+       "7.Mane",
+        "8.Goretzka",
+       "9.Pavard",
+        "10.muller",
+       "11.marcel",
+        "12.roben",
+        "13.ribery",
+        "14.reinildo",
+        "15.lucas hernandez",
+        "16.Lewan"
+};
+        
+        String jugadores5[]= { 
+                
+                "0.Dida",
+               "1.Cafu",
+                "2.Darmian",
+               "3.Alessandro",
+              "4.Maldini",
+               "5.Kaka",
+               "6.Ronaldinho",
+             "7.Gatusso",
+               "8.Pirlo",
+             "9.Serginho",
+              "10.Inzaghi",
+              "11.Ronaldo",
+             "12.Balotelli",
+              "13.Marco",
+            "14.ricardo",
+               "15.Cordova",
+               "16.Alberto" 					
+        };
+                String jugadores6[]= { 
+                
+                "0.Edersdon",
+                "1.Ruben Diaz",
+                "2.Stones",
+               "3.Ake",
+               "4.Gomez",
+                "5.Mendy",
+               "6.Joao",
+              "7.Foden",
+                "8.Gundogan",
+             "9.De Bruyne",
+              "10.Haland",
+             "11.Bernardo Silva",
+              "12.Grealish",
+               "13.Philips",
+               "14.Julian alvarez",
+                "15.Ortega",
+             "16.Pavo"
+                };
+                int resultado_equipo1 = 0, resultado_equipo2= 0;
+        	    int GolesBARCA, GolesREAL, GolesBAYER, GolesATLETI, GolesTotal;
+        	    
+        	    int PuntosBARCA, PJBARCA, PGBARCA,PEBARCA,PPBARCA,PuntosBAYER,PJBAYER,PGBAYER,PEBAYER,PPBAYER, PuntosREAL,  PJREAL, PGREAL, PEREAL,PPREAL, PuntosATLETI,PJATLETI,PGATLETI,PEATLETI,PPATLETI;
+        	    GolesTotal=0;
+        	    GolesBARCA=0;
+        	    GolesREAL=0;
+        	    GolesBAYER=0;
+        	    GolesATLETI=0;
+        	    PuntosBARCA=0;
+        	    PJBARCA=0;
+        	    PGBARCA=0;
+        	    PEBARCA=0;
+        	    PPBARCA=0;
+        	    PuntosBAYER=0;
+        	    PJBAYER=0;
+        	    PGBAYER=0;
+        	    PEBAYER=0;
+        	    PPBAYER=0;
+        	    PuntosREAL=0;
+        	    PJREAL=0;
+        	    PGREAL=0;
+        	    PEREAL=0;PPREAL=0;
+        	    
+        	    PuntosATLETI=0;
+        	    PJATLETI=0;
+        	    PGATLETI=0;
+        	    PEATLETI=0;
+        	    PPATLETI=0;
+        	    
+        	   int BARCAVBAYER=0;
+        	   int BARCAVREAL=0;
+        	   int BARCAVATLETI=0;
+        	   int BAYERVATLETI=0;
+        	   int BAYERVREAL=0;
+        	   int REALVATLETI=0;
+        	   
+		while (opcion!=8) {
+		System.out.println("seleccione una opcion");
+		System.out.println("1. Administra un equipo");
+           System.out.println("2. Tabla de posciones");
+           System.out.println("3. Resultados de la jornada");
+           System.out.println("4. Tabla goleadores");
+           System.out.println("5. Inicar Juego ");
+           System.out.println("6. Ingresa un resultado ");
+           System.out.println("7. Simular campeonato");
+           System.out.println("8. Salir ");   
+           opcion = leer.nextInt();
+           switch (opcion) {
+           case 1:
+        	   administrador(capi,jugadores1,jugadores2,jugadores3, jugadores4);
+        	   break;
+           case 2: 
+        	  tabla(resultado_equipo1,resultado_equipo2, GolesBARCA, GolesREAL, GolesBAYER,GolesATLETI, GolesTotal,  PuntosBARCA, PJBARCA, PGBARCA, PEBARCA, PPBARCA, PuntosBAYER, PJBAYER,PGBAYER, PEBAYER, PPBAYER, PuntosREAL,  PJREAL, PGREAL, PEREAL,  PPREAL, PuntosATLETI, PJATLETI, PGATLETI,  PEATLETI,  PPATLETI ); 
+        			 
+        	   break;
+           case 3:
+        	   RESULTADOS(resultado_equipo1,resultado_equipo2, GolesBARCA, GolesREAL, GolesBAYER,GolesATLETI, GolesTotal,  PuntosBARCA, PJBARCA, PGBARCA, PEBARCA, PPBARCA, PuntosBAYER, PJBAYER,PGBAYER, PEBAYER, PPBAYER, PuntosREAL,  PJREAL, PGREAL, PEREAL,  PPREAL, PuntosATLETI, PJATLETI, PGATLETI,  PEATLETI,  PPATLETI);
+        	   break;
+           case 4:
+        	   goleadores(resultado_equipo1,resultado_equipo2, GolesBARCA, GolesREAL, GolesBAYER,GolesATLETI, GolesTotal,  PuntosBARCA, PJBARCA, PGBARCA, PEBARCA, PPBARCA, PuntosBAYER, PJBAYER,PGBAYER, PEBAYER, PPBAYER, PuntosREAL,  PJREAL, PGREAL, PEREAL,  PPREAL, PuntosATLETI, PJATLETI, PGATLETI,  PEATLETI,  PPATLETI);
+        	   break;
+           case 5:
+        	   inciarjuego(jugadores1,jugadores2,jugadores3, jugadores4);
+        	   break;
+           case 6:
+        	   ingresa(resultado_equipo1,resultado_equipo2, GolesBARCA, GolesREAL, GolesBAYER,GolesATLETI, GolesTotal,  PuntosBARCA, PJBARCA, PGBARCA, PEBARCA, PPBARCA, PuntosBAYER, PJBAYER,PGBAYER, PEBAYER, PPBAYER, PuntosREAL,  PJREAL, PGREAL, PEREAL,  PPREAL, PuntosATLETI, PJATLETI, PGATLETI,  PEATLETI,  PPATLETI);
+        	   break;
+           case 7:
+        	   simular(jugadores1,jugadores2,jugadores3, jugadores4);
+        	   break;
+        	   
+           
+           }
+	
+		}
+		
+		
+	}
+
+	public static void administrador(String capi,String jugadores1[],String jugadores2[] ,String jugadores3[],String jugadores4[]) {
+		while (opcion!=5) {
+			System.out.println("seleccione un equipo");
+			System.out.println("1. Real madrid");
+	           System.out.println("2. Barcelona");
+	           System.out.println("3. atletico");
+	           System.out.println("4. bayern");
+	           System.out.println("5. Salir ");   
+	           opcion = leer.nextInt();
+	           switch (opcion) {
+	           case 1:
+	        	   equipo1(jugadores1,capi);
+	        	   break;
+	           case 2: 
+	        	   equipo2(jugadores2, capi);
+	        	   break;
+	           case 3:
+	        	   equipo3(jugadores3, capi);
+	        	   break;
+	           case 4:
+	        	   equipo4(jugadores4, capi);
+	        	   break;	            	   
+	           
+	           }
+		
+			}
+	}
+		public static void equipo1(String jugadores1[], String capi) {
+			
+			while (opcion!=6) {
+				System.out.println("seleccione una opcion");
+				System.out.println("1. ver jugadores");
+		           System.out.println("2. cambiar de poscion");
+		           System.out.println("3. ingresar nuevo jugador");
+		           System.out.println("4. sustituir");
+		           System.out.println("5. elegir capitan ");
+		           System.out.println("6. Salir ");   
+		           opcion = leer.nextInt();
+		           switch (opcion) {
+		           case 1:
+		        	   verposciones(jugadores1,capi);
+		        	   break;
+		           case 2: 
+		        	   cambiar(jugadores1);
+		        	   break;
+		           case 3:
+		        	   ingresar(jugadores1);
+		        	   break;
+		           case 4:
+		        	   sustituir(jugadores1);
+		        	   break;
+		           case 5:
+		        	   elegircapi(jugadores1, capi);
+		        	   break;		              	   
+		           
+		           }
+			
+				}
+				
+				
+			}
+
+			public static void verposciones(String jugadores1[],String capi) {
+				System.out.println("Real Madrid :");
+				for(int i=0;i<jugadores1.length;i++)
+		        {
+		            System.out.println(jugadores1[i]);
+		        }
+				System.out.println("el capitan es " + capi);
+			}
+			
+			public static void cambiar(String jugadores1[]) {
+				System.out.println("A que poscion quiere cambairlo");
+				int opcion1 = leer.nextInt();
+				System.out.println("que jugador quiere en esa pocscion");
+				opcion = leer.nextInt();				
+				jugadores1[opcion1] = "opcion";
+				for(int i=0;i<jugadores1.length;i++)
+		        {
+		            System.out.println(jugadores1[i]);
+		        }  
+				 
+		}	 
+			public static void ingresar(String jugadores1[]) {
+				System.out.println("Desea añadir un jugador mas al equipo");
+				String sd = leer.nextLine();
+				if (jugadores1.length>17) {
+					System.out.println("Ya esta el maximo de jugadores en el equipo");
+				} else {
+					System.out.println("Coloque el dorsal y nombre de su jugador");
+					String sed = leer.nextLine();
+					jugadores1[16]= sed;
+				}
+			}
+				 
+			
+			public static void sustituir(String jugadores1[]) {
+				for(int i=0;i<3;i++) {				
+					System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+					int opcion1 = leer.nextInt();				
+					System.out.println("que jugador quiere en esa pocscion");				
+					opcion = leer.nextInt();
+					Collections.swap(Arrays.asList(jugadores1), opcion1, opcion);
+			        System.out.println(Arrays.toString(jugadores1));
+					
+					for(int k=0;k<jugadores1.length;k++)
+			        {
+			            System.out.println(jugadores1[k]);
+			        }
+					 
+					}
+			}	
+				 
+				
+			public static void elegircapi(String jugadores1[], String capi) {
+				
+				System.out.println("Ingrese el dorsal del capitan para el equipo");
+				opcion = leer.nextInt();
+				capi = jugadores1 [opcion];
+			}
+								
+	
+	public static void equipo2(String jugadores2[], String capi) {
+		while (opcion!=6) {
+			System.out.println("seleccione una opcion");
+			System.out.println("1. ver jugadores");
+	           System.out.println("2. cambiar de poscion");
+	           System.out.println("3. ingresar nuevo jugador");
+	           System.out.println("4. sustituir");
+	           System.out.println("5. elegir capitan ");
+	           System.out.println("6. Salir ");   
+	           opcion = leer.nextInt();
+	           switch (opcion) {
+	           case 1:
+	        	   verposciones2(jugadores2, capi);
+	        	   break;
+	           case 2: 
+	        	   cambiar2(jugadores2);
+	        	   break;
+	           case 3:
+	        	   ingresar2(jugadores2);
+	        	   break;
+	           case 4:
+	        	   sustituir2(jugadores2);
+	        	   break;
+	           case 5:
+	        	   elegircapi2(jugadores2, capi);
+	        	   break;		              	   
+	           
+	           }
+		
+			}
+			
+			
+		}
+
+
+		public static void verposciones2(String jugadores2[], String capi) {
+			System.out.println("Barcelona :");
+			for(int i=0;i<jugadores2.length;i++)
+	        {
+	            System.out.println(jugadores2[i]);
+	        }
+			System.out.println("el capitan es " + capi);
+		}
+					
+		public static void cambiar2(String jugadores2[]) {
+			System.out.println("A que poscion quiere cambairlo");
+			int opcion1 = leer.nextInt();
+			System.out.println("que jugador quiere en esa pocscion");
+			opcion = leer.nextInt();				
+			jugadores2[opcion1] = "opcion";
+			for(int i=0;i<jugadores2.length;i++)
+	        {
+	            System.out.println(jugadores2[i]);
+	        }  
+			 
+	}	 
+		public static void ingresar2(String jugadores2[]) {
+			System.out.println("Desea añadir un jugador mas al equipo");
+			String sd = leer.nextLine();
+			if (jugadores2.length>17) {
+				System.out.println("Ya esta el maximo de jugadores en el equipo");
+			} else {
+				System.out.println("Coloque el dorsal y nombre de su jugador");
+				String sed = leer.nextLine();
+				jugadores2[16]= sed;
+			}
+		}
+		public static void sustituir2(String jugadores2[]) {
+			for(int i=0;i<3;i++) {				
+				System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+				int opcion1 = leer.nextInt();				
+				System.out.println("que jugador quiere en esa pocscion");				
+				opcion = leer.nextInt();
+				Collections.swap(Arrays.asList(jugadores2), opcion1, opcion);
+		        System.out.println(Arrays.toString(jugadores2));
+				
+				for(int k=0;k<jugadores2.length;k++)
+		        {
+		            System.out.println(jugadores2[k]);
+		        }
+				 
+				}
+		}	
+		public static void elegircapi2(String jugadores2[], String capi) {
+			System.out.println("Ingrese el capitan para el equipo");
+			capi = leer.next();
+		}
+
+		
+	 
+	public static void equipo3(String jugadores3[],String capi) {
+		while (opcion!=6) {
+			System.out.println("seleccione una opcion");
+			System.out.println("1. ver jugadores");
+	           System.out.println("2. cambiar de poscion");
+	           System.out.println("3. ingresar nuevo jugador");
+	           System.out.println("4. sustituir");
+	           System.out.println("5. elegir capitan ");
+	           System.out.println("6. Salir ");   
+	           opcion = leer.nextInt();
+	           switch (opcion) {
+	           case 1:
+	        	   verposciones3(jugadores3, capi);
+	        	   break;
+	           case 2: 
+	        	   cambiar3(jugadores3);
+	        	   break;
+	           case 3:
+	        	   ingresar3(jugadores3);
+	        	   break;
+	           case 4:
+	        	   sustituir3(jugadores3);
+	        	   break;
+	           case 5:
+	        	   elegircapi3(jugadores3, capi);
+	        	   break;		              	   
+	           
+	           }
+		
+			}
+			
+			
+		}
+
+		public static void verposciones3(String jugadores3[], String capi) {
+			System.out.println("Atletico :");
+			for(int i=0;i<jugadores3.length;i++)
+	        {
+	            System.out.println(jugadores3[i]);
+	        }
+			System.out.println("el capitan es " + capi);
+		}
+					
+		public static void cambiar3(String jugadores3[]) {
+			System.out.println("A que poscion quiere cambairlo");
+			int opcion1 = leer.nextInt();
+			System.out.println("que jugador quiere en esa pocscion");
+			opcion = leer.nextInt();				
+			jugadores3[opcion1] = "opcion";
+			for(int i=0;i<jugadores3.length;i++)
+	        {
+	            System.out.println(jugadores3[i]);
+	        }  
+		}	
+	 
+		public static void ingresar3(String jugadores3[]) {
+			System.out.println("Desea añadir un jugador mas al equipo");
+			String sd = leer.nextLine();
+			if (jugadores3.length>17) {
+				System.out.println("Ya esta el maximo de jugadores en el equipo");
+			} else {
+				System.out.println("Coloque el dorsal y nombre de su jugador");
+				String sed = leer.nextLine();
+				jugadores3[16]= sed;
+			}
+		}
+		public static void sustituir3(String jugadores3[]) {
+			for(int i=0;i<3;i++) {				
+				System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+				int opcion1 = leer.nextInt();				
+				System.out.println("que jugador quiere en esa pocscion");				
+				opcion = leer.nextInt();
+				Collections.swap(Arrays.asList(jugadores3), opcion1, opcion);
+		        System.out.println(Arrays.toString(jugadores3));
+				
+				for(int k=0;k<jugadores3.length;k++)
+		        {
+		            System.out.println(jugadores3[k]);
+		        }
+				 
+				}
+		}
+		public static void elegircapi3(String jugadores3[], String capi) {
+			System.out.println("Ingrese el capitan para el equipo");
+			capi = leer.next();
+		}
+
+		
+		
+	public static void equipo4(String jugadores4[], String capi) {
+		while (opcion!=6) {
+			System.out.println("seleccione una opcion");
+			System.out.println("1. ver jugadores");
+	           System.out.println("2. cambiar de poscion");
+	           System.out.println("3. ingresar nuevo jugador");
+	           System.out.println("4. sustituir");
+	           System.out.println("5. elegir capitan ");
+	           System.out.println("6. Salir ");   
+	           opcion = leer.nextInt();
+	           switch (opcion) {
+	           case 1:
+	        	   verposciones4(jugadores4, capi);
+	        	   break;
+	           case 2: 
+	        	   cambiar4(jugadores4);
+	        	   break;
+	           case 3:
+	        	   ingresar4(jugadores4);
+	        	   break;
+	           case 4:
+	        	   sustituir4(jugadores4);
+	        	   break;
+	           case 5:
+	        	   elegircapi4(jugadores4, capi);
+	        	   break;		              	   
+	           
+	           }
+		
+			}
+			
+			
+		}
+
+
+		public static void verposciones4(String jugadores4[], String capi) {
+			System.out.println(" Bayern:");
+			for(int i=0;i<jugadores4.length;i++)
+	        {
+	            System.out.println(jugadores4[i]);
+	        }
+			System.out.println("el capitan es " + capi);
+		}
+		
+		
+		public static void cambiar4(String jugadores4[]) {
+			System.out.println("A que poscion quiere cambairlo");
+			int opcion1 = leer.nextInt();
+			System.out.println("que jugador quiere en esa pocscion");
+			opcion = leer.nextInt();				
+			jugadores4[opcion1] = "opcion";
+			for(int i=0;i<jugadores4.length;i++)
+	        {
+	            System.out.println(jugadores4[i]);
+	        } 
+	}	 
+		public static void ingresar4(String jugadores4[]) {
+			System.out.println("Desea añadir un jugador mas al equipo");
+			String sd = leer.nextLine();
+			if (jugadores4.length>17) {
+				System.out.println("Ya esta el maximo de jugadores en el equipo");
+			} else {
+				System.out.println("Coloque el dorsal y nombre de su jugador");
+				String sed = leer.nextLine();
+				jugadores4[16]= sed;
+			}
+		}
+		public static void sustituir4(String jugadores4[]) {
+			for(int i=0;i<3;i++) {				
+				System.out.println("CAMBIO "+ i + "A que poscion quiere cambairlo");
+				int opcion1 = leer.nextInt();				
+				System.out.println("que jugador quiere en esa pocscion");				
+				opcion = leer.nextInt();
+				Collections.swap(Arrays.asList(jugadores4), opcion1, opcion);
+		        System.out.println(Arrays.toString(jugadores4));
+				
+				for(int k=0;k<jugadores4.length;k++)
+		        {
+		            System.out.println(jugadores4[k]);
+		        }
+				 
+				}
+		}	
+		public static void elegircapi4(String jugadores4[],String capi) {
+			System.out.println("Ingrese el capitan para el equipo");
+			capi = leer.next();
+		}
+
+		
+		
+										
+	public static void tabla(int resultado_equipo1, int resultado_equipo2, int GolesBARCA,int GolesREAL,int GolesBAYER,int GolesATLETI,int GolesTotal, int PuntosBARCA,int PJBARCA,int PGBARCA,int PEBARCA,int PPBARCA,int PuntosBAYER,int PJBAYER,int PGBAYER,int PEBAYER,int PPBAYER,int PuntosREAL, int PJREAL,int PGREAL, int PEREAL, int PPREAL, int PuntosATLETI, int PJATLETI, int PGATLETI, int PEATLETI, int PPATLETI ) {
+		 GolesTotal=GolesTotal+GolesREAL+GolesBAYER+GolesBARCA+GolesATLETI;
+         JOptionPane.showMessageDialog(null,"Fin Del Campeonato");
+         JOptionPane.showMessageDialog(null,"Resultados del Campeonato\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBAYER: PJ="+PJBAYER+" PG="+PGBAYER+" PER="+PEBAYER+"PP="+PPBAYER+"\nREAL: PJ="+PJREAL+" PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI);
+         JOptionPane.showMessageDialog(null,"Los Puntajes Fueron los siguientes\nBARCA="+PuntosBARCA+"\nBAYER="+PuntosBAYER+"\nARG="+PuntosREAL+"\nMILAN="+"\nATLETI="+PuntosATLETI+"\nCITY=");
+         JOptionPane.showMessageDialog(null,"Goles en total="+GolesTotal+"\nGoles BARCA="+GolesBARCA+"\nGoles REAL="+GolesREAL+"\nGoles BAYER="+GolesBAYER+"\nGoles ATLETI="+GolesATLETI);
+}	 
+	public static void RESULTADOS(int resultado_equipo1, int resultado_equipo2, int GolesBARCA,int GolesREAL,int GolesBAYER,int GolesATLETI,int GolesTotal, int PuntosBARCA,int PJBARCA,int PGBARCA,int PEBARCA,int PPBARCA,int PuntosBAYER,int PJBAYER,int PGBAYER,int PEBAYER,int PPBAYER,int PuntosREAL, int PJREAL,int PGREAL, int PEREAL, int PPREAL, int PuntosATLETI, int PJATLETI, int PGATLETI, int PEATLETI, int PPATLETI) {
+		JOptionPane.showMessageDialog(null,"Resultados del Campeonato\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBAYER: PJ="+PJBAYER+" PG="+PGBAYER+" PER="+PEBAYER+"PP="+PPBAYER+"\nREAL: PJ="+PJREAL+" PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI);
+	}	
+	public static void goleadores(int resultado_equipo1, int resultado_equipo2, int GolesBARCA,int GolesREAL,int GolesBAYER,int GolesATLETI,int GolesTotal, int PuntosBARCA,int PJBARCA,int PGBARCA,int PEBARCA,int PPBARCA,int PuntosBAYER,int PJBAYER,int PGBAYER,int PEBAYER,int PPBAYER,int PuntosREAL, int PJREAL,int PGREAL, int PEREAL, int PPREAL, int PuntosATLETI, int PJATLETI, int PGATLETI, int PEATLETI, int PPATLETI ) {
+		 JOptionPane.showMessageDialog(null,"Goles en total="+GolesTotal+"\nGoles BARCA="+GolesBARCA+"\nGoles REAL="+GolesREAL+"\nGoles BAYER="+GolesBAYER+"\nGoles ATLETI="+GolesATLETI);
+		 if (GolesBARCA>GolesREAL && GolesBARCA > GolesBAYER && GolesBARCA > GolesATLETI ) {
+			 System.out.println("el equipo con mas goles es el barcelona con " + GolesBARCA);
+		 } else if (GolesREAL> GolesBAYER && GolesREAL > GolesATLETI) {
+			 System.out.println("el equipo con mas goles es el Real Madird con " + GolesREAL);
+		 }  else if (GolesBAYER> GolesATLETI) {
+			 System.out.println("el equipo con mas goles es el Bayer con " + GolesBAYER);
+		 }  else {
+			 System.out.println("el equipo con mas goles es el Atletico con " + GolesATLETI);
+		 }
+	}	
+	public static void inciarjuego(String jugadores1[],String jugadores2[],String jugadores3[],String jugadores4[]) {
+		
+		
+	}
+	public static void ingresa(int resultado_equipo1, int resultado_equipo2, int GolesBARCA,int GolesREAL,int GolesBAYER,int GolesATLETI,int GolesTotal, int PuntosBARCA,int PJBARCA,int PGBARCA,int PEBARCA,int PPBARCA,int PuntosBAYER,int PJBAYER,int PGBAYER,int PEBAYER,int PPBAYER,int PuntosREAL, int PJREAL,int PGREAL, int PEREAL, int PPREAL, int PuntosATLETI, int PJATLETI, int PGATLETI, int PEATLETI, int PPATLETI ) {
+		
+	  
+		while (opcion!=7) {
+		System.out.println("seleccione un duelo");
+		System.out.println("1. Real madrid vs barcelona");
+           System.out.println("2. Real madrid vs bayern");
+           System.out.println("3. real madrid vs atletico");
+           System.out.println("4. barcelona vs atletico");
+           System.out.println("5. barcelona vs bayern ");
+           System.out.println("6. bayern vs atletico");
+           System.out.println("7. salir");
+           opcion = leer.nextInt();
+           switch (opcion) {
+           case 1:
+        	  System.out.println("Ingrese los goles del real");
+        	  int rnd1 = leer.nextInt();
+        	  System.out.println("Ingrese los goles del barca");
+        	  int rnd2 = leer.nextInt();
+               resultado_equipo1= rnd2;
+               resultado_equipo2=rnd1;
+               PJBARCA=PJBARCA+1;
+               PJREAL=PJREAL+1;
+               GolesBARCA=GolesBARCA+resultado_equipo1;
+               GolesREAL=GolesREAL+resultado_equipo2;
+               if (resultado_equipo1>resultado_equipo2){
+                   PuntosBARCA=PuntosBARCA+3;
+                   System.out.println("BARCA:"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                   PPREAL=PPREAL+1;
+                   PGBARCA=PGBARCA+1;
+                   System.out.println("Resultado: El ganador es el Barcelona");
+               } else if (resultado_equipo1<resultado_equipo2) {
+            	   System.out.println("BARCA"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                   PuntosREAL=PuntosREAL+3;
+                   PPBARCA=PPBARCA+1;
+                   PGREAL=PGREAL+1;
+                   System.out.println("Resultado: El ganador es el real madrid");
+               }
+               else {
+            	   System.out.println("BARCA:"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                   PuntosBARCA=PuntosBARCA+1;
+                   PuntosREAL=PuntosREAL+1;
+                   PEBARCA=PEBARCA+1;
+                   PEREAL=PEREAL+1;
+                   System.out.println("Resultado: Empate");
+        	   break;
+               }
+               
+           case 2: 
+        	   System.out.println("Ingrese los goles del real");
+        	   int rnd3 = leer.nextInt();
+         	  System.out.println("Ingrese los goles del bayern");
+         	  int rnd4 = leer.nextInt();
+                resultado_equipo1= rnd4;
+                resultado_equipo2=rnd3;
+                PJBAYER=PJBAYER+1;
+                PJREAL=PJREAL+1;
+                GolesBAYER=GolesBAYER+resultado_equipo1;
+                GolesREAL=GolesREAL+resultado_equipo2;
+                if (resultado_equipo1>resultado_equipo2){
+                    PuntosBAYER=PuntosBAYER+3;
+                    System.out.println("BAYER:"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                    PPREAL=PPREAL+1;
+                    PGBAYER=PGBAYER+1;
+                    System.out.println("Resultado: El ganador es el Bayer");
+                } else if (resultado_equipo1<resultado_equipo2) {
+                	 System.out.println("BAYER"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                    PuntosREAL=PuntosREAL+3;
+                    PPBAYER=PPBAYER+1;
+                    PGREAL=PGREAL+1;
+                    System.out.println("Resultado: El ganador es el real madrid");
+                }
+                else {
+                	 System.out.println("BAYER:"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                    PuntosBAYER=PuntosBAYER+1;
+                    PuntosREAL=PuntosREAL+1;
+                    PEBAYER=PEBAYER+1;
+                    PEREAL=PEREAL+1;
+                    System.out.println("Resultado: Empate");
+         	   break;
+                }
+                
+           case 3:
+        	   System.out.println("Ingrese los goles del real");
+        	   int rnd6 = leer.nextInt();
+         	  System.out.println("Ingrese los goles del atletico");
+         	  int rnd5 = leer.nextInt();
+                resultado_equipo1= rnd5;
+                resultado_equipo2=rnd6;
+                PJATLETI=PJATLETI+1;
+                PJREAL=PJREAL+1;
+                GolesATLETI=GolesATLETI+resultado_equipo1;
+                GolesREAL=GolesREAL+resultado_equipo2;
+                if (resultado_equipo1>resultado_equipo2){
+                    PuntosATLETI=PuntosATLETI+3;
+                    System.out.println("ATLETI:"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                    PPREAL=PPREAL+1;
+                    PGATLETI=PGATLETI+1;
+                    System.out.println("Resultado: El ganador es el atletico");
+                } else if (resultado_equipo1<resultado_equipo2) {
+                	 System.out.println("ATLETI"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                    PuntosREAL=PuntosREAL+3;
+                    PPATLETI=PPATLETI+1;
+                    PGREAL=PGREAL+1;
+                    System.out.println("Resultado: El ganador es el Real");
+                }
+                else {
+                	 System.out.println("ATLETI:"+resultado_equipo1+"\nREAL:"+resultado_equipo2 );
+                    PuntosATLETI=PuntosATLETI+1;
+                    PuntosREAL=PuntosREAL+1;
+                    PEATLETI=PEATLETI+1;
+                    PEREAL=PEREAL+1;
+                    System.out.println("Resultado: Empate");
+         	   break;
+                }
+           case 4:
+        	   System.out.println("Ingrese los goles del atleti");
+        	   int rnd8 = leer.nextInt();
+         	  System.out.println("Ingrese los goles del barca");
+         	  int rnd7 = leer.nextInt();
+                resultado_equipo1= rnd8;
+                resultado_equipo2=rnd7;
+                PJATLETI=PJATLETI+1;
+                PJBARCA=PJBARCA+1;
+                GolesATLETI=GolesATLETI+resultado_equipo1;
+                GolesBARCA=GolesBARCA+resultado_equipo2;
+                if (resultado_equipo1>resultado_equipo2){
+                    PuntosATLETI=PuntosATLETI+3;
+                    System.out.println("ATLETI:"+resultado_equipo1+"\nBARCA:"+resultado_equipo2 );
+                    PPBARCA=PPBARCA+1;
+                    PGATLETI=PGATLETI+1;
+                    System.out.println("Resultado: El ganador es el atletico");
+                } else if (resultado_equipo1<resultado_equipo2) {
+                	 System.out.println("ATLETI"+resultado_equipo1+"\nBARCA:"+resultado_equipo2 );
+                    PuntosBARCA=PuntosBARCA + 3;
+                    PPATLETI=PPATLETI+1;
+                    PGBARCA=PGBARCA+1;
+                    System.out.println("Resultado: El ganador es el barca");
+                }
+                else {
+                	 System.out.println("ATLETI:"+resultado_equipo1+"\nBARCA:"+resultado_equipo2 );
+                    PuntosBARCA=PuntosBARCA+1;
+                    PuntosATLETI=PuntosATLETI+1;
+                    PEBARCA=PEBARCA+1;
+                    PEATLETI=PEATLETI+1;
+                    System.out.println("Resultado: Empate");
+         	   break;
+                }        	   
+           case 5:
+        	   System.out.println("Ingrese los goles del barca");
+        	   int rnd9 = leer.nextInt();
+         	  System.out.println("Ingrese los goles del bayern");
+         	  int rnd10 = leer.nextInt();
+                resultado_equipo1= rnd10;
+                resultado_equipo2=rnd9;
+                PJBAYER=PJBAYER+1;
+                PJBARCA=PJBARCA+1;
+                GolesBAYER=GolesBAYER+resultado_equipo1;
+                GolesBARCA=GolesBARCA+resultado_equipo2;
+                if (resultado_equipo1>resultado_equipo2){
+                    PuntosBAYER=PuntosBAYER+3;
+                    System.out.println("BAYER:"+resultado_equipo1+"\nBARCA:"+resultado_equipo2 );
+                    PPBARCA=PPBARCA+1;
+                    PGBAYER=PGBAYER+1;
+                    System.out.println("Resultado: El ganador es el bayer");
+                } else if (resultado_equipo1<resultado_equipo2) {
+                	 System.out.println("BAYER"+resultado_equipo1+"\nBARCA:"+resultado_equipo2 );
+                    PuntosBARCA=PuntosBARCA+3;
+                    PPBAYER=PPBAYER+1;
+                    PGBARCA=PGBARCA+1;
+                    System.out.println("Resultado: El ganador es el barca");
+                }
+                else {
+                	 System.out.println("BAYER:"+resultado_equipo1+"\nBARCA:"+resultado_equipo2 );
+                    PuntosBARCA=PuntosBARCA+1;
+                    PuntosBAYER=PuntosBAYER+1;
+                    PEBARCA=PEBARCA+1;
+                    PEBAYER=PEBAYER+1;
+                    System.out.println("Resultado: Empate");
+         	   break;
+                }
+           case 6:
+        	   System.out.println("Ingrese los goles del atletico");
+        	   int rnd11 = leer.nextInt();
+         	  System.out.println("Ingrese los goles del bayern");
+         	  int rnd12 = leer.nextInt();
+                resultado_equipo1= rnd12;
+                resultado_equipo2=rnd11;
+                PJBAYER=PJBAYER+1;
+                PJATLETI=PJATLETI+1;
+                GolesBAYER=GolesBAYER+resultado_equipo1;
+                GolesATLETI=GolesATLETI+resultado_equipo2;
+                if (resultado_equipo1>resultado_equipo2){
+                    PuntosBAYER=PuntosBAYER+3;
+                    System.out.println("BAYER:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2 );
+                    PPATLETI=PPATLETI+1;
+                    PGBAYER=PGBAYER+1;
+                    System.out.println("Resultado: El ganador es el bayer");
+                } else if (resultado_equipo1<resultado_equipo2) {
+                	 System.out.println("BAYER"+resultado_equipo1+"\nATLETI:"+resultado_equipo2 );
+                    PuntosATLETI=PuntosATLETI+3;
+                    PPBAYER=PPBAYER+1;
+                    PGATLETI=PGATLETI+1;
+                    System.out.println("Resultado: El ganador es el atletico");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2 );
+                    PuntosATLETI=PuntosATLETI+1;
+                    PuntosBAYER=PuntosBAYER+1;
+                    PEATLETI=PEATLETI+1;
+                    PEBAYER=PEBAYER+1;
+                    System.out.println("Resultado: Empate");
+         	   break;
+         	   
+                }
+           }
+           GolesTotal=GolesTotal+GolesREAL+GolesBAYER+GolesBARCA+GolesATLETI;
+           JOptionPane.showMessageDialog(null,"Fin Del Campeonato");
+           JOptionPane.showMessageDialog(null,"Resultados del Campeonato\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBAYER: PJ="+PJBAYER+" PG="+PGBAYER+" PER="+PEBAYER+"PP="+PPBAYER+"\nREAL: PJ="+PJREAL+" PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI);
+           JOptionPane.showMessageDialog(null,"Los Puntajes Fueron los siguientes\nBARCA="+PuntosBARCA+"\nBAYER="+PuntosBAYER+"\nARG="+PuntosREAL+"\nMILAN="+"\nATLETI="+PuntosATLETI+"\nCITY=");
+           JOptionPane.showMessageDialog(null,"Goles en total="+GolesTotal+"\nGoles BARCA="+GolesBARCA+"\nGoles REAL="+GolesREAL+"\nGoles BAYER="+GolesBAYER+"\nGoles ATLETI="+GolesATLETI);
+		}
+}
+		
+	
+public static void simular(String jugadores1[],String jugadores2[],String jugadores3[],String jugadores4[]) {
+	 JOptionPane.showMessageDialog(null,"Bienvenido al campeonato de futbol");
+	 Partidos();
+     Gacias();
+}
+public static void Gacias(){
+    JOptionPane.showMessageDialog(null,"Gracias a los equipos por participar");
+}
+public static void Partidos(){
+    int resultado_equipo1, resultado_equipo2;
+    int GolesBARCA, GolesREAL, GolesBAYER, GolesMILAN, GolesATLETI, GOlesCITY, GolesTotal;
+    
+    int PuntosBARCA, PJBARCA, PGBARCA,PEBARCA,PPBARCA,PuntosBAYER,PJBAYER,PGBAYER,PEBAYER,PPBAYER, PuntosREAL,  PJREAL, PGREAL, PEREAL,PPREAL, PuntosMILAN, PJMILAN,PGMILAN,PEMILAN, PPMILAN, PuntosATLETI,PJATLETI,PGATLETI,PEATLETI,PPATLETI,PuntosCITY, PJCITY,PGCITY,PECITY,PPCITY;
+    GolesTotal=0;
+    GolesBARCA=0;
+    GolesREAL=0;
+    GolesBAYER=0;
+    GolesMILAN=0;
+    GolesATLETI=0;
+    GOlesCITY=0;
+    PuntosBARCA=0;
+    PJBARCA=0;
+    PGBARCA=0;
+    PEBARCA=0;
+    PPBARCA=0;
+    PuntosBAYER=0;
+    PJBAYER=0;
+    PGBAYER=0;
+    PEBAYER=0;
+    PPBAYER=0;
+    PuntosREAL=0;
+    PJREAL=0;
+    PGREAL=0;
+    PEREAL=0;PPREAL=0;
+    PuntosMILAN=0;
+    PJMILAN=0;
+    PGMILAN=0;
+    PEMILAN=0;
+    PPMILAN=0;
+    PuntosATLETI=0;
+    PJATLETI=0;
+    PGATLETI=0;
+    PEATLETI=0;
+    PPATLETI=0;
+    PuntosCITY=0;
+    PJCITY=0;
+    PGCITY=0;
+    PECITY=0;
+    PPCITY=0;
+   int BARCAVBAYER=0;
+   int   BARCAVREAL=0;
+   int BARCAVATLETI=0;
+   int BARCAVMILAN=0;
+   int BAYERVATLETI=0;
+   int REALVCITY=0;
+   int BAYERVREAL=0;
+   int BARCAVCITY=0;
+   int BAYERVMILAN=0;
+   int REALVATLETI=0;
+   int BAYERVCITY=0;
+   int REALVMILAN=0;
+   int MILANVATLETI=0;
+   int MILANVCITY=0;
+   int ATLETIVCITY=0;
+    Random rnd1= new Random();
+    Random rnd2= new Random();
+    JOptionPane.showMessageDialog(null,"Primera jornada\nBARCA vs BAYER\nREAL vs MILAN\nATLETI vs CITY");
+    if (BARCAVBAYER==0){
+        JOptionPane.showMessageDialog(null,"BARCA VS BAYER");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJBAYER=PJBAYER+1;
+        PJBARCA=PJBARCA+1;
+        GolesBARCA=GolesBARCA+resultado_equipo1;
+        GolesBAYER=GolesBAYER+resultado_equipo2;//aaa
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBARCA=PuntosBARCA+3;
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nBAYER:"+resultado_equipo2 );
+            PPMILAN=PPMILAN+1;
+            PGBARCA=PGBARCA+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BARCA"+resultado_equipo1+"\nBAYER:"+resultado_equipo2 );
+            PuntosBAYER=PuntosBAYER+3;
+            PPBARCA=PPBARCA+1;
+            PGBAYER=PGBAYER+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nBAYER:"+resultado_equipo2 );
+            PuntosBARCA=PuntosBARCA+1;
+            PuntosBAYER=PuntosBAYER+1;
+            PEBARCA=PEBARCA+1;
+            PEBAYER=PEBAYER+1;
+        }
+    }
+    if (REALVMILAN==0) {
+        JOptionPane.showMessageDialog(null,"REAL VS MILAN");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJREAL=PJREAL+1;
+        PJMILAN=PJMILAN+1;
+        GolesREAL=GolesBARCA+resultado_equipo1;
+        GolesMILAN=GolesBAYER+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosREAL=PuntosREAL+3;
+            JOptionPane.showMessageDialog(null,"Real:"+resultado_equipo1+"\n Milan:"+resultado_equipo2 );
+            PPMILAN=PPMILAN+1;
+            PGREAL=PGREAL+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2 );
+            PuntosMILAN=PuntosMILAN+3;
+            PPREAL=PPREAL+1;
+            PGMILAN=PGMILAN+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2 );
+            PuntosREAL=PuntosREAL+1;
+            PuntosMILAN=PuntosMILAN+1;
+            PEMILAN=PEMILAN+1;
+            PEREAL=PEREAL+1;
+        }
+    }
+    if (ATLETIVCITY==0) {
+        JOptionPane.showMessageDialog(null,"ATLETI VS CITY");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJATLETI=PJATLETI+1;
+        PJCITY=PJCITY+1;
+        GolesATLETI=GolesATLETI+resultado_equipo1;
+        GOlesCITY=GOlesCITY+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosATLETI=PuntosATLETI+3;
+            JOptionPane.showMessageDialog(null,"ATLETI:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PPCITY=PPCITY+1;
+            PGATLETI=PGATLETI+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"ATLETI:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PuntosCITY=PuntosCITY+3;
+            PPREAL=PPATLETI+1;
+            PGCITY=PGCITY+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"ATLETI:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PuntosATLETI=PuntosATLETI+1;
+            PuntosCITY=PuntosCITY+1;
+            PECITY=PECITY+1;
+            PEATLETI=PEATLETI+1;
+        }
+    }
+    JOptionPane.showMessageDialog(null,"Puntajes del campeonato\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBAYER: PJ="+PJBAYER+" PG="+PGBAYER+" PE="+PEBAYER+"PP="+PPBAYER+"\nREAL: PJ="+PJREAL+" PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nMILAN: PJ="+PJMILAN+" PG="+PGMILAN+" PE="+PEMILAN+"PP="+PPMILAN+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI+"\nCITY: PJ="+PJCITY+" PG="+PGCITY+" PE="+PECITY+"PP="+PPCITY);
+    JOptionPane.showMessageDialog(null,"Segunda Jornada\nCOL vs ARG\nBR vs PER\nCHI vs URU");
+    if (BAYERVREAL==0) {
+        JOptionPane.showMessageDialog(null,"BAYER VS REAL");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJREAL=PJREAL+1;
+        PJBAYER=PJBAYER+1;
+        GolesBAYER=GolesBAYER+resultado_equipo1;
+        GolesREAL=GolesREAL+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBAYER=PuntosBAYER+3;
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nREAL:"+resultado_equipo2);
+            PPREAL=PPREAL+1;
+            PGBAYER=PGBAYER+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nREAL:"+resultado_equipo2);
+            PuntosREAL=PuntosREAL+3;
+            PPBAYER=PPBAYER+1;
+            PGREAL=PGREAL+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nREAL:"+resultado_equipo2);
+            PuntosREAL=PuntosREAL+1;
+            PuntosBAYER=PuntosBAYER+1;
+            PEBAYER=PEBAYER+1;
+            PEREAL=PEREAL+1;
+        }
+    }
+    if (BARCAVATLETI==0){
+        JOptionPane.showMessageDialog(null,"BARCA VS ATLETI");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJBARCA=PJBARCA+1;
+        PJATLETI=PJATLETI+1;
+        GolesBARCA=GolesBARCA+resultado_equipo1;
+        GolesATLETI=GolesATLETI+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBARCA=PuntosBARCA+3;
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2);
+            PPATLETI=PPATLETI+1;
+            PGBARCA=PGBARCA+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2);
+            PuntosATLETI=PuntosATLETI+3;
+            PPBARCA=PPBARCA+1;
+            PGATLETI=PGATLETI+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "BARCA:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2);
+            PuntosATLETI = PuntosATLETI + 1;
+            PuntosBARCA = PuntosBARCA + 1;
+            PEBARCA = PEBARCA + 1;
+            PEATLETI = PEATLETI + 1;
+        }
+    }
+    if (MILANVCITY==0){
+        JOptionPane.showMessageDialog(null,"MILAN VS CITY");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJMILAN=PJMILAN+1;
+        PJCITY=PJCITY+1;
+        GolesMILAN=GolesMILAN+resultado_equipo1;
+        GOlesCITY=GOlesCITY+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosMILAN=PuntosMILAN+3;
+            JOptionPane.showMessageDialog(null,"MILAN:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PPCITY=PPCITY+1;
+            PGMILAN=PGMILAN+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"MILAN:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PuntosCITY=PuntosCITY+3;
+            PPMILAN=PPMILAN+1;
+            PGCITY=PGCITY+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "MILAN:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PuntosCITY = PuntosCITY + 1;
+            PuntosMILAN = PuntosMILAN
+                    + 1;
+            PECITY = PECITY + 1;
+            PEMILAN = PEMILAN + 1;
+        }
+    }
+    JOptionPane.showMessageDialog(null,"Puntajes del campeonato\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBAYER: PJ="+PJBAYER+" PG="+PGBAYER+" PE="+PEBAYER+"PP="+PPBAYER+"\nREAL: PJ="+PJREAL+" PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nMILAN: PJ="+PJMILAN+" PG="+PGMILAN+" PE="+PEMILAN+"PP="+PPMILAN+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI+"\nCITY: PJ="+PJCITY+" PG="+PGCITY+" PE="+PECITY+"PP="+PPCITY);
+    JOptionPane.showMessageDialog(null,"Tercera Jornada\nBAYER vs CITY\nBARCA vs REAL\nMILAN vs ATLETI");
+    if (BAYERVCITY==0){
+        JOptionPane.showMessageDialog(null,"BAYER VS CITY");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJBAYER=PJBAYER+1;
+        PJCITY=PJCITY+1;
+        GolesBAYER=GolesBAYER+resultado_equipo1;
+        GOlesCITY=GOlesCITY+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBAYER=PuntosBAYER+3;
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PPCITY=PPCITY+1;
+            PGBAYER=PGBAYER+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nCITY:"+resultado_equipo2);
+            PuntosCITY=PuntosCITY+3;
+            PPBAYER=PPBAYER+1;
+            PGCITY=PGCITY+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "BAYER:" + resultado_equipo1 + "\nCITY:" + resultado_equipo2);
+            PuntosCITY = PuntosCITY + 1;
+            PuntosBAYER = PuntosBAYER+ 1;
+            PECITY = PECITY + 1;
+            PEBAYER = PEBAYER + 1;
+        }
+    }
+    if (BARCAVCITY==0){
+        JOptionPane.showMessageDialog(null,"BARCA va CITY");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJBARCA=PJBARCA+1;
+        PJREAL=PJREAL+1;
+        GolesBARCA=GolesBARCA+resultado_equipo1;
+        GolesREAL=GolesREAL+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBARCA=PuntosBARCA+3;
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nREAL:"+resultado_equipo2);
+            PPREAL=PPREAL+1;
+            PGBARCA=PGBARCA+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nREAL:"+resultado_equipo2);
+            PuntosREAL=PuntosREAL+3;
+            PPBARCA=PPBARCA+1;
+            PGREAL=PGREAL+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "BARCA:" + resultado_equipo1 + "\nREAL:" + resultado_equipo2);
+            PuntosREAL = PuntosREAL + 1;
+            PuntosBARCA = PuntosBARCA + 1;
+            PEBARCA = PEBARCA + 1;
+            PEREAL = PEREAL + 1;
+        }
+    }
+    if (MILANVATLETI==0) {
+        JOptionPane.showMessageDialog(null, "MILAN va ATLETI");
+        resultado_equipo1 = rnd1.nextInt(0, 4);
+        resultado_equipo2 = rnd2.nextInt(0, 4);
+        PJMILAN = PJMILAN + 1;
+        PJATLETI = PJATLETI + 1;
+        GolesMILAN=GolesMILAN+resultado_equipo1;
+        GolesATLETI=GolesATLETI+resultado_equipo2;
+        if (resultado_equipo1 > resultado_equipo2) {
+            PuntosMILAN = PuntosMILAN + 3;
+            JOptionPane.showMessageDialog(null, "MILAN:" + resultado_equipo1 + "\nATLETI:" + resultado_equipo2);
+            PPATLETI = PPATLETI + 1;
+            PGMILAN = PGMILAN + 1;
+        } else if (resultado_equipo1 < resultado_equipo2) {
+            JOptionPane.showMessageDialog(null, "MILAN:" + resultado_equipo1 + "\nATLETI:" + resultado_equipo2);
+            PuntosATLETI = PuntosATLETI + 3;
+            PPMILAN = PPMILAN + 1;
+            PGATLETI = PGATLETI + 1;
+        } else {
+            JOptionPane.showMessageDialog(null, "MILAN:" + resultado_equipo1 + "\nATLETI:" + resultado_equipo2);
+            PuntosATLETI = PuntosATLETI + 1;
+            PuntosMILAN = PuntosMILAN + 1;
+            PEATLETI = PEATLETI + 1;
+            PEMILAN = PEMILAN + 1;
+        }
+    }
+    JOptionPane.showMessageDialog(null,"Puntajes de la Jornada\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nREAL: PJ="+PJREAL+ " PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nMILAN: PJ="+PJMILAN+" PG="+PGMILAN+" PE="+PEMILAN+"PP="+PPMILAN+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI+"\nCITY: PJ="+PJCITY+" PG="+PGCITY+" PE="+PECITY+"PP="+PPCITY);
+    JOptionPane.showMessageDialog(null,"Segunda Jornada\nBARCA vs MILAN\nBAYER vs ATLETI\nREAL vs CITY");
+    if (BARCAVMILAN==0){
+        JOptionPane.showMessageDialog(null,"BARCA VS MILAN");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJMILAN=PJMILAN+1;
+        PJBARCA=PJBARCA+1;
+        GolesBARCA=GolesBARCA+resultado_equipo1;
+        GolesMILAN=GolesMILAN+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBARCA=PuntosBARCA+3;
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2 );
+            PPMILAN=PPMILAN+1;
+            PGBARCA=PGBARCA+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2 );
+            PuntosMILAN=PuntosMILAN+3;
+            PPBARCA=PPBARCA+1;
+            PGMILAN=PGMILAN+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2 );
+            PuntosBARCA=PuntosBARCA+1;
+            PuntosMILAN=PuntosMILAN+1;
+            PEBARCA=PEBARCA+1;
+            PEMILAN=PEMILAN+1;
+        }
+    }
+    if (BAYERVATLETI==0) {
+        JOptionPane.showMessageDialog(null,"BAYER VS ATLETI");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJATLETI=PJATLETI+1;
+        PJBAYER=PJBAYER+1;
+        GolesBAYER=GolesBAYER+resultado_equipo1;
+        GolesATLETI=GolesATLETI+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBAYER=PuntosBAYER+3;
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2);
+            PPATLETI=PPATLETI+1;
+            PGBAYER=PGBAYER+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2);
+            PuntosREAL=PuntosREAL+3;
+            PPBAYER=PPBAYER+1;
+            PGATLETI=PGATLETI+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2);
+            PuntosATLETI=PuntosATLETI+1;
+            PuntosBAYER=PuntosBAYER+1;
+            PEBAYER=PEBAYER+1;
+            PEATLETI=PEATLETI+1;
+        }
+    }
+    if (REALVCITY==0) {
+        JOptionPane.showMessageDialog(null,"REAL VS CITY");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJREAL=PJREAL+1;
+        PJCITY=PJCITY+1;
+        GOlesCITY=GOlesCITY+resultado_equipo2;
+        GolesREAL=GolesREAL+resultado_equipo1;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosREAL=PuntosREAL+3;
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nCITY:"+resultado_equipo2 );
+            PPCITY=PPCITY+1;
+            PGREAL=PGREAL+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nCITY:"+resultado_equipo2 );
+            PuntosCITY=PuntosCITY+3;
+            PPREAL=PPREAL+1;
+            PGCITY=PGCITY+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nCITY:"+resultado_equipo2 );
+            PuntosREAL=PuntosREAL+1;
+            PuntosCITY=PuntosCITY+1;
+            PECITY=PECITY+1;
+            PEREAL=PEREAL+1;
+        }
+    }
+    JOptionPane.showMessageDialog(null,"Puntajes del campeonato\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBAYER: PJ="+PJBAYER+" PG="+PGBAYER+" PE="+PEBAYER+"PP="+PPBAYER+"\nREAL: PJ="+PJREAL+" PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nMILAN: PJ="+PJMILAN+" PG="+PGMILAN+" PE="+PEMILAN+"PP="+PPMILAN+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI+"\nCITY: PJ="+PJCITY+" PG="+PGCITY+" PE="+PECITY+"PP="+PPCITY);
+    JOptionPane.showMessageDialog(null,"Quinta Jornada\nBR vs URU\nCOL vs CHI\nARG vs PER");
+    if (BARCAVCITY==0){
+        JOptionPane.showMessageDialog(null,"BARCA VS CITY");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJCITY=PJCITY+1;
+        PJBARCA=PJBARCA+1;
+        GolesBARCA=GolesBARCA+resultado_equipo1;
+        GOlesCITY=GOlesCITY+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBARCA=PuntosBARCA+3;
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nCITY:"+resultado_equipo2 );
+            PPCITY=PPCITY+1;
+            PGBARCA=PGBARCA+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nCITY:"+resultado_equipo2 );
+            PuntosCITY=PuntosCITY+3;
+            PPBARCA=PPBARCA+1;
+            PGCITY=PGCITY+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"BARCA:"+resultado_equipo1+"\nCITY:"+resultado_equipo2 );
+            PuntosBARCA=PuntosBARCA+1;
+            PuntosCITY=PuntosCITY+1;
+            PEBARCA=PEBARCA+1;
+            PECITY=PECITY+1;
+        }
+    }
+    if (BAYERVMILAN==0) {
+        JOptionPane.showMessageDialog(null,"BAYER VS MILAN");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJMILAN=PJMILAN+1;
+        PJBAYER=PJBAYER+1;
+        GolesBAYER=GolesBAYER+resultado_equipo1;
+        GolesMILAN=GolesMILAN+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosBAYER=PuntosBAYER+3;
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2);
+            PPMILAN=PPMILAN+1;
+            PGBAYER=PGBAYER+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2);
+            PuntosMILAN=PuntosMILAN+3;
+            PPBAYER=PPBAYER+1;
+            PGMILAN=PGMILAN+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"BAYER:"+resultado_equipo1+"\nMILAN:"+resultado_equipo2);
+            PuntosMILAN=PuntosMILAN+1;
+            PuntosBAYER=PuntosBAYER+1;
+            PEBAYER=PEBAYER+1;
+            PEMILAN=PEMILAN+1;
+        }
+    }
+    if (REALVATLETI==0) {
+        JOptionPane.showMessageDialog(null,"REAL VS ATLETI");
+        resultado_equipo1=rnd1.nextInt(0,4);
+        resultado_equipo2=rnd2.nextInt(0,4);
+        PJREAL=PJREAL+1;
+        PJATLETI=PJATLETI+1;
+        GolesREAL=GolesREAL+resultado_equipo1;
+        GolesATLETI=GolesATLETI+resultado_equipo2;
+        if (resultado_equipo1>resultado_equipo2){
+            PuntosREAL=PuntosREAL+3;
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2 );
+            PPATLETI=PPATLETI+1;
+            PGREAL=PGREAL+1;
+        } else if (resultado_equipo1<resultado_equipo2) {
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2 );
+            PuntosATLETI=PuntosATLETI+3;
+            PPREAL=PPREAL+1;
+            PGATLETI=PGATLETI+1;
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"REAL:"+resultado_equipo1+"\nATLETI:"+resultado_equipo2 );
+            PuntosREAL=PuntosREAL+1;
+            PuntosATLETI=PuntosATLETI+1;
+            PEATLETI=PEATLETI+1;
+            PEREAL=PEREAL+1;
+        }
+    }
+    GolesTotal=GolesTotal+GolesREAL+GolesMILAN+GolesBAYER+GolesBARCA+GolesATLETI+GOlesCITY;
+    JOptionPane.showMessageDialog(null,"Fin Del Campeonato");
+    JOptionPane.showMessageDialog(null,"Resultados del Campeonato\nBARCA: PJ="+PJBARCA+" PG="+PGBARCA+" PE="+PEBARCA+"PP="+PPBARCA+"\nBAYER: PJ="+PJBAYER+" PG="+PGBAYER+" PER="+PEBAYER+"PP="+PPBAYER+"\nREAL: PJ="+PJREAL+" PG="+PGREAL+" PE="+PEREAL+"PP="+PPREAL+"\nMILAN: PJ="+PJMILAN+" PG="+PGMILAN+" PE="+PEMILAN+"PP="+PPMILAN+"\nATLETI: PJ="+PJATLETI+" PG="+PGATLETI+" PE="+PEATLETI+"PP="+PPATLETI+"\nCITY: PJ="+PJCITY+" PG="+PGCITY+" PE="+PECITY+"PP="+PPCITY);
+    JOptionPane.showMessageDialog(null,"Los Puntajes Fueron los siguientes\nBARCA="+PuntosBARCA+"\nBAYER="+PuntosBAYER+"\nARG="+PuntosREAL+"\nMILAN="+PuntosMILAN+"\nATLETI="+PuntosATLETI+"\nCITY="+PuntosCITY);
+    JOptionPane.showMessageDialog(null,"Goles en total="+GolesTotal+"\nGoles BARCA="+GolesBARCA+"\nGoles REAL="+GolesREAL+"\nGoles BAYER="+GolesBAYER+"\nGoles MILAN="+GolesMILAN+"\nGoles ATLETI="+GolesATLETI+"\nGoles CITY="+GOlesCITY);
+}
+
+	}	 
